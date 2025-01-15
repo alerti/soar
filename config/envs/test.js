@@ -13,5 +13,5 @@ module.exports = {
     LONG_TOKEN_SECRET: process.env.LONG_TOKEN_SECRET,
     SHORT_TOKEN_SECRET: process.env.SHORT_TOKEN_SECRET,
     NACL_SECRET: process.env.NACL_SECRET,
-    USER_PORT: process.env.USER_PORT || 3001
+    USER_PORT: process.env.USER_PORT || 3000
 };
