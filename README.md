@@ -129,9 +129,9 @@ If you prefer not to install locally:
    ```
    Expect a `PONG` if running.
 
-1. Sign up for a service  [Redis Cloud](https://redis.com/try-free/) or [AWS ElastiCache](https://aws.amazon.com/elasticache/).
-2. Obtain your Redis connection string, e.g. `redis://:password@host:port`.
-3. Use this string for `CACHE_REDIS` in `/config/envs/local.js`.
+4. Sign up for a service [Redis Cloud](https://redis.com/try-free/) or [AWS ElastiCache](https://aws.amazon.com/elasticache/).
+5. Obtain your Redis connection string, e.g. `redis://:password@host:port`.
+6. Use this string for `CACHE_REDIS` in `/config/envs/local.js`.
 
 ### Step 3: Setup MongoDB Atlas
 1. Create a MongoDB Atlas cluster at https://cloud.mongodb.com/.
@@ -153,14 +153,31 @@ npm install
 ```
 
 ### Step 6: Configure Environment Variables
-1. Open `/config/envs/local.js`.
-2. Set:
+1. Create a `.env` file in the root directory.
+2. Add the following variables:
    ```
    MONGO_URI=<your_atlas_connection_string>
    CACHE_REDIS=<your_redis_connection_string>
-   CORTEX_URI=<any_service_url_if_needed>
+   CORTEX_REDIS=<your_cortex_redis_connection_string>
+   JWT_SECRET=<your_jwt_secret>
+   LONG_TOKEN_SECRET=<your_long_token_secret>
+   SHORT_TOKEN_SECRET=<your_short_token_secret>
+   NACL_SECRET=<your_nacl_secret>
    USER_PORT=<desired_port>
    ```
+3. Ensure that `.env` is listed in `.gitignore` to prevent it from being committed.
+
+```shell
+# Example `.env` file
+MONGO_URI=mongodb+srv://<username>:<password>@<clustername>.mongodb.net/<dbname>?retryWrites=true&w=majority
+CACHE_REDIS=redis://:<password>@<host>:<port>
+CORTEX_REDIS=redis://:<password>@<host>:<port>
+JWT_SECRET=your_jwt_secret
+LONG_TOKEN_SECRET=your_long_token_secret
+SHORT_TOKEN_SECRET=your_short_token_secret
+NACL_SECRET=your_nacl_secret
+USER_PORT=3000
+```
 
 ### Step 7: Run Tests
 ```shell

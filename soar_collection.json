@@ -681,8 +681,8 @@
 									"raw": "https://https://soar-1a6w.onrender.com//api/users/register",
 									"protocol": "https",
 									"host": [
-										"soar-school-management-system-ee8a8faad39d",
-										"herokuapp",
+										"soar-1a6w",
+										"onrender",
 										"com"
 									],
 									"path": [
@@ -712,8 +712,8 @@
 									"raw": "https://https://soar-1a6w.onrender.com//api/users/login",
 									"protocol": "https",
 									"host": [
-										"soar-school-management-system-ee8a8faad39d",
-										"herokuapp",
+										"soar-1a6w",
+										"onrender",
 										"com"
 									],
 									"path": [
@@ -739,8 +739,8 @@
 									"raw": "https://https://soar-1a6w.onrender.com//api/users",
 									"protocol": "https",
 									"host": [
-										"soar-school-management-system-ee8a8faad39d",
-										"herokuapp",
+										"soar-1a6w",
+										"onrender",
 										"com"
 									],
 									"path": [
@@ -765,8 +765,8 @@
 									"raw": "https://https://soar-1a6w.onrender.com//api/users/6763f8f0098d7196e06f3c83",
 									"protocol": "https",
 									"host": [
-										"soar-school-management-system-ee8a8faad39d",
-										"herokuapp",
+										"soar-1a6w",
+										"onrender",
 										"com"
 									],
 									"path": [
@@ -800,8 +800,8 @@
 									"raw": "https://https://soar-1a6w.onrender.com//api/users/6763fb21098d7196e06f3c91",
 									"protocol": "https",
 									"host": [
-										"soar-school-management-system-ee8a8faad39d",
-										"herokuapp",
+										"soar-1a6w",
+										"onrender",
 										"com"
 									],
 									"path": [
@@ -827,8 +827,8 @@
 									"raw": "https://https://soar-1a6w.onrender.com//api/users/6763f8f0098d7196e06f3c83",
 									"protocol": "https",
 									"host": [
-										"soar-school-management-system-ee8a8faad39d",
-										"herokuapp",
+										"soar-1a6w",
+										"onrender",
 										"com"
 									],
 									"path": [
@@ -867,8 +867,8 @@
 									"raw": "https://https://soar-1a6w.onrender.com//api/schools",
 									"protocol": "https",
 									"host": [
-										"soar-school-management-system-ee8a8faad39d",
-										"herokuapp",
+										"soar-1a6w",
+										"onrender",
 										"com"
 									],
 									"path": [
@@ -893,8 +893,8 @@
 									"raw": "https://https://soar-1a6w.onrender.com//api/schools",
 									"protocol": "https",
 									"host": [
-										"soar-school-management-system-ee8a8faad39d",
-										"herokuapp",
+										"soar-1a6w",
+										"onrender",
 										"com"
 									],
 									"path": [
@@ -919,8 +919,8 @@
 									"raw": "https://https://soar-1a6w.onrender.com//api/schools/6763fb3a098d7196e06f3c95",
 									"protocol": "https",
 									"host": [
-										"soar-school-management-system-ee8a8faad39d",
-										"herokuapp",
+										"soar-1a6w",
+										"onrender",
 										"com"
 									],
 									"path": [
@@ -954,8 +954,8 @@
 									"raw": "https://https://soar-1a6w.onrender.com//api/schools/6763fb3a098d7196e06f3c95",
 									"protocol": "https",
 									"host": [
-										"soar-school-management-system-ee8a8faad39d",
-										"herokuapp",
+										"soar-1a6w",
+										"onrender",
 										"com"
 									],
 									"path": [
@@ -981,8 +981,8 @@
 									"raw": "https://https://soar-1a6w.onrender.com//api/schools/6763fb3a098d7196e06f3c95",
 									"protocol": "https",
 									"host": [
-										"soar-school-management-system-ee8a8faad39d",
-										"herokuapp",
+										"soar-1a6w",
+										"onrender",
 										"com"
 									],
 									"path": [
@@ -1021,8 +1021,8 @@
 									"raw": "https://https://soar-1a6w.onrender.com//api/students",
 									"protocol": "https",
 									"host": [
-										"soar-school-management-system-ee8a8faad39d",
-										"herokuapp",
+										"soar-1a6w",
+										"onrender",
 										"com"
 									],
 									"path": [
@@ -1047,8 +1047,8 @@
 									"raw": "https://https://soar-1a6w.onrender.com//api/students",
 									"protocol": "https",
 									"host": [
-										"soar-school-management-system-ee8a8faad39d",
-										"herokuapp",
+										"soar-1a6w",
+										"onrender",
 										"com"
 									],
 									"path": [
@@ -1073,8 +1073,8 @@
 									"raw": "https://https://soar-1a6w.onrender.com//api/students/6763ff7b098d7196e06f3cd4",
 									"protocol": "https",
 									"host": [
-										"soar-school-management-system-ee8a8faad39d",
-										"herokuapp",
+										"soar-1a6w",
+										"onrender",
 										"com"
 									],
 									"path": [
@@ -1108,8 +1108,8 @@
 									"raw": "https://https://soar-1a6w.onrender.com//api/students/6763ff7b098d7196e06f3cd4",
 									"protocol": "https",
 									"host": [
-										"soar-school-management-system-ee8a8faad39d",
-										"herokuapp",
+										"soar-1a6w",
+										"onrender",
 										"com"
 									],
 									"path": [
@@ -1135,8 +1135,8 @@
 									"raw": "https://https://soar-1a6w.onrender.com//api/students/classrooms/6763fe89098d7196e06f3cc3",
 									"protocol": "https",
 									"host": [
-										"soar-school-management-system-ee8a8faad39d",
-										"herokuapp",
+										"soar-1a6w",
+										"onrender",
 										"com"
 									],
 									"path": [
@@ -1163,8 +1163,8 @@
 									"raw": "https://https://soar-1a6w.onrender.com//api/students/6763ffa6098d7196e06f3cdf",
 									"protocol": "https",
 									"host": [
-										"soar-school-management-system-ee8a8faad39d",
-										"herokuapp",
+										"soar-1a6w",
+										"onrender",
 										"com"
 									],
 									"path": [
@@ -1203,8 +1203,8 @@
 									"raw": "https://https://soar-1a6w.onrender.com//api/classrooms",
 									"protocol": "https",
 									"host": [
-										"soar-school-management-system-ee8a8faad39d",
-										"herokuapp",
+										"soar-1a6w",
+										"onrender",
 										"com"
 									],
 									"path": [
@@ -1229,8 +1229,8 @@
 									"raw": "https://https://soar-1a6w.onrender.com//api/classrooms",
 									"protocol": "https",
 									"host": [
-										"soar-school-management-system-ee8a8faad39d",
-										"herokuapp",
+										"soar-1a6w",
+										"onrender",
 										"com"
 									],
 									"path": [
@@ -1255,8 +1255,8 @@
 									"raw": "https://https://soar-1a6w.onrender.com//api/classrooms/6763fdde098d7196e06f3cb1",
 									"protocol": "https",
 									"host": [
-										"soar-school-management-system-ee8a8faad39d",
-										"herokuapp",
+										"soar-1a6w",
+										"onrender",
 										"com"
 									],
 									"path": [
@@ -1290,8 +1290,8 @@
 									"raw": "https://https://soar-1a6w.onrender.com//api/classrooms/6763fdde098d7196e06f3cb1",
 									"protocol": "https",
 									"host": [
-										"soar-school-management-system-ee8a8faad39d",
-										"herokuapp",
+										"soar-1a6w",
+										"onrender",
 										"com"
 									],
 									"path": [
@@ -1317,8 +1317,8 @@
 									"raw": "https://https://soar-1a6w.onrender.com//api/classrooms/6763fdde098d7196e06f3cb1",
 									"protocol": "https",
 									"host": [
-										"soar-school-management-system-ee8a8faad39d",
-										"herokuapp",
+										"soar-1a6w",
+										"onrender",
 										"com"
 									],
 									"path": [

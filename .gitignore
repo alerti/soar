@@ -3,3 +3,7 @@ node_modules/
 nohup.out
 coverage/
 mochawesome-report/*.html
+
+.env
+config/envs/local.js
+config/envs/test.js

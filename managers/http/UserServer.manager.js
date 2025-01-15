@@ -81,7 +81,7 @@ module.exports = class UserServer {
         /** a single middleware to handle all */
         app.all('/api/:moduleName/:fnName', this.userApi.mw);
 
-        const PORT = process.env.PORT || this.config.dotEnv.USER_PORT || 3000;
+        const PORT = process.env.PORT || this.config.dotEnv.USER_PORT;
         const server = http.createServer(app);
         server.listen(PORT, () => {
             console.log(`Server is running on port ${PORT}`);
