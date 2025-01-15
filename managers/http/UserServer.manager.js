@@ -11,9 +11,9 @@ module.exports = class UserServer {
         this.config = config;
         this.managers = managers;
         this.userApi = managers.userApi;
-        this.school = managers.school; 
-        this.userManager = managers.user; 
-        this.classroomManager = managers.classroom; 
+        this.school = managers.school;
+        this.userManager = managers.user;
+        this.classroomManager = managers.classroom;
         this.studentManager = managers.student;
         this.middlewareManager = new MiddlewareManager(app);
     }
@@ -36,7 +36,7 @@ module.exports = class UserServer {
         // Rate limiting middleware
         const limiter = rateLimit({
             windowMs: this.config.dotEnv.RATE_LIMIT_WINDOW_IN_MINUTES * 60 * 1000,
-            max: this.config.dotEnv.RATE_LIMIT_MAX_REQUESTS, 
+            max: this.config.dotEnv.RATE_LIMIT_MAX_REQUESTS,
             message: 'Too many requests from this IP, please try again later.'
         });
         app.use(limiter);
@@ -65,7 +65,17 @@ module.exports = class UserServer {
 
         // Define a basic route
         app.get('/', (req, res) => {
-            res.send('Welcome to Soar, School System Management - Backend Task!');
+            res.send(`
+                <h1>Soar School System Management API</h1>
+                <h2>Available Routes:</h2>
+                <ul>
+                    <li><strong>GET /api/schools</strong> - Manage schools</li>
+                    <li><strong>GET /api/users</strong> - Manage users</li>
+                    <li><strong>GET /api/classrooms</strong> - Manage classrooms</li>
+                    <li><strong>GET /api/students</strong> - Manage students</li>
+                    <!-- Add more routes and descriptions as needed -->
+                </ul>
+            `);
         });
 
         /** a single middleware to handle all */
@@ -77,7 +87,7 @@ module.exports = class UserServer {
             console.log(`Server is running on port ${PORT}`);
         });
 
-        
+
     }
 
     getApp() {

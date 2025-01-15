@@ -57,7 +57,7 @@ This repository contains the **Soar School Management System**, providing RESTfu
 - **`database-design-schema-diagram/`**
   Schema diagram for all entities.
 
-- **`Soar.postman_collection.json`**
+- **`soar_collection.json`**
   Postman collection for all endpoints (both local & deployed).
 
 - **`Test-Coverage.png`**
@@ -72,7 +72,39 @@ If you prefer not to install locally:
 
 - **Base URL**: []()
 - Integrated with **MongoDB Atlas** and **Redis Labs**.
-- For quick testing of all endpoints, use the `Soar.postman_collection.json` under the development folder.
+- For quick testing of all endpoints, use the `soar_collection.json` under the development folder.
+
+#### Testing with Postman
+
+1. **Install Postman**:
+   - Download and install [Postman](https://www.postman.com/downloads/) if you haven't already.
+
+2. **Import the Postman Collection**:
+   - Open Postman.
+   - Click on `Import` in the top-left corner.
+   - Select the `soar_collection.json` file located in the `development` folder.
+   - Click `Import` to add the collection to your Postman workspace.
+
+3. **Set Up Environment Variables**:
+   - In Postman, go to the `Environments` tab.
+   - Create a new environment named `Soar API`.
+   - Add the following variables:
+     - `base_url` : `http://localhost:3000` (or your deployed API URL)
+     - `token` : `your_authentication_token` (to be set after logging in)
+
+4. **Authenticate and Obtain Token**:
+   - In the imported collection, find the `Authenticate a User` request.
+   - Send a `POST` request with your user credentials.
+   - Copy the returned `token` from the response.
+   - In the `Soar API` environment, set the `token` variable with this value.
+
+5. **Use the Token in Requests**:
+   - Ensure that the `Authorization` header is set to `Bearer {{token}}` in the collection's pre-request script or individually in each request.
+
+6. **Run the Collection**:
+   - Select the `Soar API` environment.
+   - Click on the collection and choose `Run Collection`.
+   - Execute the requests and verify the responses.
 
 ---
 
@@ -97,8 +129,7 @@ If you prefer not to install locally:
    ```
    Expect a `PONG` if running.
 
-If you prefer a managed service:
-1. Sign up for a service like [Redis Cloud](https://redis.com/try-free/) or [AWS ElastiCache](https://aws.amazon.com/elasticache/).
+1. Sign up for a service  [Redis Cloud](https://redis.com/try-free/) or [AWS ElastiCache](https://aws.amazon.com/elasticache/).
 2. Obtain your Redis connection string, e.g. `redis://:password@host:port`.
 3. Use this string for `CACHE_REDIS` in `/config/envs/local.js`.
 

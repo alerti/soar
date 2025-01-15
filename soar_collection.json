@@ -29,7 +29,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"name\": \"Example School\",\n  \"address\": \"123 Main St\",\n  \"phone\": \"123-456-7890\",\n  \"email\": \"example@school.com\",\n  \"website\": \"http://example.com\",\n  \"established\": \"2000-01-01\"\n}"
+									"raw": "{\n  \"name\": \"Example School\",\n  \"address\": \"123 Main St\",\n  \"phone\": \"123-456-7890\",\n  \"email\": \"example@school.com\",\n  \"website\": \"http://soartest.com\",\n  \"established\": \"2000-01-01\"\n}"
 								},
 								"url": {
 									"raw": "http://localhost:3000/api/schools",
@@ -178,7 +178,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"username\": \"superadmin\",\n  \"email\": \"superadmin@example.com\",\n  \"password\": \"SuperSecurePassword123\",\n  \"role\": \"superadmin\"\n}"
+									"raw": "{\n  \"username\": \"superadmin\",\n  \"email\": \"superadmin@soartest.com\",\n  \"password\": \"SuperSecurePassword123\",\n  \"role\": \"superadmin\"\n}"
 								},
 								"url": {
 									"raw": "http://localhost:3000/api/users/register",
@@ -208,7 +208,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"email\": \"superadmin@example.com\",\n  \"password\": \"SuperSecurePassword123\"\n}"
+									"raw": "{\n  \"email\": \"superadmin@soartest.com\",\n  \"password\": \"SuperSecurePassword123\"\n}"
 								},
 								"url": {
 									"raw": "http://localhost:3000/api/users/login",
@@ -293,7 +293,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"username\": \"newUsername\",\n  \"email\": \"newEmail@example.com\",\n  \"password\": \"newPassword\",\n  \"role\": \"user\"\n}"
+									"raw": "{\n  \"username\": \"newUsername\",\n  \"email\": \"newEmail@soartest.com\",\n  \"password\": \"newPassword\",\n  \"role\": \"user\"\n}"
 								},
 								"url": {
 									"raw": "http://localhost:3000/api/users/USER_ID",
@@ -391,7 +391,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"name\": \"Jane Doe\",\n  \"email\": \"janedoe@example.com\",\n  \"classroomId\": \"6761d53e84463de706c4d3f9\",\n  \"age\": 16,\n  \"address\": \"789 Student St\"\n}"
+									"raw": "{\n  \"name\": \"Jane Doe\",\n  \"email\": \"janedoe@soartest.com\",\n  \"classroomId\": \"6761d53e84463de706c4d3f9\",\n  \"age\": 16,\n  \"address\": \"789 Student St\"\n}"
 								},
 								"url": {
 									"raw": "http://localhost:3000/api/students/6761da1565f45a238799b253",
@@ -455,7 +455,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"name\": \"Student 3\",\n  \"email\": \"student3@example.com\",\n  \"classroom\": \"6761d53e84463de706c4d3f9\",\n  \"age\": 17,\n  \"address\": \"3 Student St\"\n}"
+									"raw": "{\n  \"name\": \"Student 3\",\n  \"email\": \"student3@soartest.com\",\n  \"classroom\": \"6761d53e84463de706c4d3f9\",\n  \"age\": 17,\n  \"address\": \"3 Student St\"\n}"
 								},
 								"url": {
 									"raw": "http://localhost:3000/api/students",
@@ -675,10 +675,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"username\": \"superadmin\",\n  \"email\": \"superadmin@example.com\",\n  \"password\": \"SuperSecurePassword123\",\n  \"role\": \"superadmin\"\n}"
+									"raw": "{\n  \"username\": \"superadmin\",\n  \"email\": \"superadmin@soartest.com\",\n  \"password\": \"SuperSecurePassword123\",\n  \"role\": \"superadmin\"\n}"
 								},
 								"url": {
-									"raw": "https://soar-school-management-system-ee8a8faad39d.herokuapp.com/api/users/register",
+									"raw": "https://https://soar-1a6w.onrender.com//api/users/register",
 									"protocol": "https",
 									"host": [
 										"soar-school-management-system-ee8a8faad39d",
@@ -706,10 +706,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"email\": \"superadmin@example.com\",\n  \"password\": \"SuperSecurePassword123\"\n}"
+									"raw": "{\n  \"email\": \"superadmin@soartest.com\",\n  \"password\": \"SuperSecurePassword123\"\n}"
 								},
 								"url": {
-									"raw": "https://soar-school-management-system-ee8a8faad39d.herokuapp.com/api/users/login",
+									"raw": "https://https://soar-1a6w.onrender.com//api/users/login",
 									"protocol": "https",
 									"host": [
 										"soar-school-management-system-ee8a8faad39d",
@@ -736,7 +736,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://soar-school-management-system-ee8a8faad39d.herokuapp.com/api/users",
+									"raw": "https://https://soar-1a6w.onrender.com//api/users",
 									"protocol": "https",
 									"host": [
 										"soar-school-management-system-ee8a8faad39d",
@@ -762,7 +762,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://soar-school-management-system-ee8a8faad39d.herokuapp.com/api/users/6763f8f0098d7196e06f3c83",
+									"raw": "https://https://soar-1a6w.onrender.com//api/users/6763f8f0098d7196e06f3c83",
 									"protocol": "https",
 									"host": [
 										"soar-school-management-system-ee8a8faad39d",
@@ -797,7 +797,7 @@
 									"raw": "{\n  \"school\": \"6763fbe4098d7196e06f3ca4\"\n}"
 								},
 								"url": {
-									"raw": "https://soar-school-management-system-ee8a8faad39d.herokuapp.com/api/users/6763fb21098d7196e06f3c91",
+									"raw": "https://https://soar-1a6w.onrender.com//api/users/6763fb21098d7196e06f3c91",
 									"protocol": "https",
 									"host": [
 										"soar-school-management-system-ee8a8faad39d",
@@ -824,7 +824,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://soar-school-management-system-ee8a8faad39d.herokuapp.com/api/users/6763f8f0098d7196e06f3c83",
+									"raw": "https://https://soar-1a6w.onrender.com//api/users/6763f8f0098d7196e06f3c83",
 									"protocol": "https",
 									"host": [
 										"soar-school-management-system-ee8a8faad39d",
@@ -861,10 +861,10 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"name\": \"Example School\",\n  \"address\": \"123 Main Street\",\n  \"phone\": \"123-456-7890\",\n  \"email\": \"school@example.com\",\n  \"website\": \"https://example.com\",\n  \"established\": \"2023-01-01\",\n  \"admin\": \"6763fb21098d7196e06f3c91\"\n}"
+									"raw": "{\n  \"name\": \"Example School\",\n  \"address\": \"123 Main Street\",\n  \"phone\": \"123-456-7890\",\n  \"email\": \"school@soartest.com\",\n  \"website\": \"https://soartest.com\",\n  \"established\": \"2023-01-01\",\n  \"admin\": \"6763fb21098d7196e06f3c91\"\n}"
 								},
 								"url": {
-									"raw": "https://soar-school-management-system-ee8a8faad39d.herokuapp.com/api/schools",
+									"raw": "https://https://soar-1a6w.onrender.com//api/schools",
 									"protocol": "https",
 									"host": [
 										"soar-school-management-system-ee8a8faad39d",
@@ -890,7 +890,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://soar-school-management-system-ee8a8faad39d.herokuapp.com/api/schools",
+									"raw": "https://https://soar-1a6w.onrender.com//api/schools",
 									"protocol": "https",
 									"host": [
 										"soar-school-management-system-ee8a8faad39d",
@@ -916,7 +916,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://soar-school-management-system-ee8a8faad39d.herokuapp.com/api/schools/6763fb3a098d7196e06f3c95",
+									"raw": "https://https://soar-1a6w.onrender.com//api/schools/6763fb3a098d7196e06f3c95",
 									"protocol": "https",
 									"host": [
 										"soar-school-management-system-ee8a8faad39d",
@@ -951,7 +951,7 @@
 									"raw": "{\n  \"name\": \"Updated School Name\"\n}"
 								},
 								"url": {
-									"raw": "https://soar-school-management-system-ee8a8faad39d.herokuapp.com/api/schools/6763fb3a098d7196e06f3c95",
+									"raw": "https://https://soar-1a6w.onrender.com//api/schools/6763fb3a098d7196e06f3c95",
 									"protocol": "https",
 									"host": [
 										"soar-school-management-system-ee8a8faad39d",
@@ -978,7 +978,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://soar-school-management-system-ee8a8faad39d.herokuapp.com/api/schools/6763fb3a098d7196e06f3c95",
+									"raw": "https://https://soar-1a6w.onrender.com//api/schools/6763fb3a098d7196e06f3c95",
 									"protocol": "https",
 									"host": [
 										"soar-school-management-system-ee8a8faad39d",
@@ -1018,7 +1018,7 @@
 									"raw": "{\n  \"name\": \"Jane Doe\",\n  \"age\": 17,\n  \"address\": \"123 Main Street\",\n  \"email\": \"janedoe@gmail.com\",\n  \"classroom\": \"6763feb3098d7196e06f3cca\"\n}"
 								},
 								"url": {
-									"raw": "https://soar-school-management-system-ee8a8faad39d.herokuapp.com/api/students",
+									"raw": "https://https://soar-1a6w.onrender.com//api/students",
 									"protocol": "https",
 									"host": [
 										"soar-school-management-system-ee8a8faad39d",
@@ -1044,7 +1044,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://soar-school-management-system-ee8a8faad39d.herokuapp.com/api/students",
+									"raw": "https://https://soar-1a6w.onrender.com//api/students",
 									"protocol": "https",
 									"host": [
 										"soar-school-management-system-ee8a8faad39d",
@@ -1070,7 +1070,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://soar-school-management-system-ee8a8faad39d.herokuapp.com/api/students/6763ff7b098d7196e06f3cd4",
+									"raw": "https://https://soar-1a6w.onrender.com//api/students/6763ff7b098d7196e06f3cd4",
 									"protocol": "https",
 									"host": [
 										"soar-school-management-system-ee8a8faad39d",
@@ -1105,7 +1105,7 @@
 									"raw": "{\n  \"name\": \"John Doe\",\n  \"age\": 18,\n  \"address\": \"456 Another Street\"\n}"
 								},
 								"url": {
-									"raw": "https://soar-school-management-system-ee8a8faad39d.herokuapp.com/api/students/6763ff7b098d7196e06f3cd4",
+									"raw": "https://https://soar-1a6w.onrender.com//api/students/6763ff7b098d7196e06f3cd4",
 									"protocol": "https",
 									"host": [
 										"soar-school-management-system-ee8a8faad39d",
@@ -1132,7 +1132,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://soar-school-management-system-ee8a8faad39d.herokuapp.com/api/students/classrooms/6763fe89098d7196e06f3cc3",
+									"raw": "https://https://soar-1a6w.onrender.com//api/students/classrooms/6763fe89098d7196e06f3cc3",
 									"protocol": "https",
 									"host": [
 										"soar-school-management-system-ee8a8faad39d",
@@ -1160,7 +1160,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://soar-school-management-system-ee8a8faad39d.herokuapp.com/api/students/6763ffa6098d7196e06f3cdf",
+									"raw": "https://https://soar-1a6w.onrender.com//api/students/6763ffa6098d7196e06f3cdf",
 									"protocol": "https",
 									"host": [
 										"soar-school-management-system-ee8a8faad39d",
@@ -1200,7 +1200,7 @@
 									"raw": "{\n  \"name\": \"Class A\",\n  \"capacity\": 30,\n  \"school\": \"6763fbe4098d7196e06f3ca4\"\n}"
 								},
 								"url": {
-									"raw": "https://soar-school-management-system-ee8a8faad39d.herokuapp.com/api/classrooms",
+									"raw": "https://https://soar-1a6w.onrender.com//api/classrooms",
 									"protocol": "https",
 									"host": [
 										"soar-school-management-system-ee8a8faad39d",
@@ -1226,7 +1226,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://soar-school-management-system-ee8a8faad39d.herokuapp.com/api/classrooms",
+									"raw": "https://https://soar-1a6w.onrender.com//api/classrooms",
 									"protocol": "https",
 									"host": [
 										"soar-school-management-system-ee8a8faad39d",
@@ -1252,7 +1252,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://soar-school-management-system-ee8a8faad39d.herokuapp.com/api/classrooms/6763fdde098d7196e06f3cb1",
+									"raw": "https://https://soar-1a6w.onrender.com//api/classrooms/6763fdde098d7196e06f3cb1",
 									"protocol": "https",
 									"host": [
 										"soar-school-management-system-ee8a8faad39d",
@@ -1287,7 +1287,7 @@
 									"raw": "{\n  \"name\": \"Updated Class Name\",\n  \"capacity\": 1\n}"
 								},
 								"url": {
-									"raw": "https://soar-school-management-system-ee8a8faad39d.herokuapp.com/api/classrooms/6763fdde098d7196e06f3cb1",
+									"raw": "https://https://soar-1a6w.onrender.com//api/classrooms/6763fdde098d7196e06f3cb1",
 									"protocol": "https",
 									"host": [
 										"soar-school-management-system-ee8a8faad39d",
@@ -1314,7 +1314,7 @@
 									}
 								],
 								"url": {
-									"raw": "https://soar-school-management-system-ee8a8faad39d.herokuapp.com/api/classrooms/6763fdde098d7196e06f3cb1",
+									"raw": "https://https://soar-1a6w.onrender.com//api/classrooms/6763fdde098d7196e06f3cb1",
 									"protocol": "https",
 									"host": [
 										"soar-school-management-system-ee8a8faad39d",

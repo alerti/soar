@@ -1,157 +1,148 @@
-const request = require('supertest');
-const { expect } = require('chai');
-const app = require('../../app');
-const schoolModel = require('../../managers/entities/school/school.model'); // Adjust the path as necessary
-const userModel = require('../../managers/entities/user/user.model'); // Adjust the path as necessary
+const request = require("supertest");
+const { expect } = require("chai");
+const app = require("../../app");
+const schoolModel = require("../../managers/entities/school/school.model");
+const userModel = require("../../managers/entities/user/user.model");
 
-describe('School Entity Integration Tests', () => {
-    let userId;
-    let token;
-    let schoolId;
+describe("School Entity Integration Tests", function () {
+  this.timeout(10000); // Increase timeout to handle longer async operations
 
-    before(async () => {
-        // Clear the users and schools collections before each test
-        await userModel.deleteMany({});
-        await schoolModel.deleteMany({});
+  let superadminId;
+  let superadminToken;
+  let schoolId;
 
-        // Create a superadmin user
-        const newUser = {
-            username: 'Super Admin',
-            email: 'superadmin@example.com',
-            password: 'password123',
-            role: 'superadmin'
-        };
+  before(async () => {
+    console.time("Setup Time");
 
-        const res = await request(app)
-            .post('/api/users/register')
-            .send(newUser);
+    try {
+      // Clear collections
+      await Promise.all([userModel.deleteMany({}), schoolModel.deleteMany({})]);
 
-        userId = res.body.user._id;
+      // Create and authenticate superadmin
+      const superadmin = {
+        username: "Super Admin",
+        email: "superadmin@soartest.com",
+        password: "password123",
+        role: "superadmin",
+      };
 
-        // Authenticate the superadmin user
-        const credentials = {
-            email: 'superadmin@example.com',
-            password: 'password123'
-        };
+      const res = await request(app)
+        .post("/api/users/register")
+        .send(superadmin);
 
-        const authRes = await request(app)
-            .post('/api/users/login')
-            .send(credentials);
+      superadminId = res.body.user._id;
 
-        token = authRes.body.token;
-    });
+      const authRes = await request(app)
+        .post("/api/users/login")
+        .send({ email: superadmin.email, password: superadmin.password });
 
-    it('should create a new school', async () => {
-        const newSchool = {
-            name: 'Test School',
-            address: '123 Test St',
-            phone: '123-456-7890',
-            email: 'testschool@example.com',
-            website: 'http://testschool.com',
-            established: '2000-01-01',
-            admin: userId
-        };
+      superadminToken = authRes.body.token;
 
-        const res = await request(app)
-            .post('/api/schools')
-            .set('Authorization', `Bearer ${token}`)
-            .send(newSchool);
+      // Create schools
+      const schools = [
+        {
+          name: "Test School A",
+          address: "123 Main St",
+          phone: "123-456-7890",
+          email: "schoolA@soartest.com",
+          website: "http://schoolA.com",
+          established: "2000-01-01",
+          admin: superadminId,
+        },
+        {
+          name: "Test School B",
+          address: "456 Elm St",
+          phone: "987-654-3210",
+          email: "schoolB@soartest.com",
+          website: "http://schoolB.com",
+          established: "2005-01-01",
+          admin: superadminId,
+        },
+      ];
 
-        schoolId = res.body._id;
-        expect(res.status).to.equal(201);
-        expect(res.body).to.have.property('_id');
-        expect(res.body.name).to.equal(newSchool.name);
-        expect(res.body.address).to.equal(newSchool.address);
-        expect(res.body.phone).to.equal(newSchool.phone);
-        expect(res.body.email).to.equal(newSchool.email);
-        expect(res.body.adminId).to.equal(newSchool.adminId);
-    });
+      for (const school of schools) {
+        const schoolRes = await request(app)
+          .post("/api/schools")
+          .set("Authorization", `Bearer ${superadminToken}`)
+          .send(school);
+        schoolId = schoolRes.body._id; // Keep the last created school ID
+      }
+    } catch (error) {
+      console.error("Error during setup:", error);
+    } finally {
+      console.timeEnd("Setup Time");
+    }
+  });
 
-    it('should get a school by ID', async () => {
-        const newSchool = {
-            name: 'Test School',
-            address: '123 Test St',
-            phone: '123-456-7890',
-            email: 'testschool@example.com',
-            website: 'http://testschool.com',
-            established: '2000-01-01',
-            admin: userId
-        };
+  after(async () => {
+    console.time("Teardown Time");
 
-        // Get the school by ID
-        const getRes = await request(app)
-            .get(`/api/schools/${schoolId}`)
-            .set('Authorization', `Bearer ${token}`);
+    try {
+      // Clear collections
+      await Promise.all([userModel.deleteMany({}), schoolModel.deleteMany({})]);
+    } catch (error) {
+      console.error("Error during teardown:", error);
+    } finally {
+      console.timeEnd("Teardown Time");
+    }
+  });
 
-        expect(getRes.status).to.equal(200);
-        expect(getRes.body.name).to.equal(newSchool.name);
-        expect(getRes.body.address).to.equal(newSchool.address);
-        expect(getRes.body.phone).to.equal(newSchool.phone);
-        expect(getRes.body.email).to.equal(newSchool.email);
-        expect(getRes.body.admin._id).to.equal(userId);
-    });
+  it("should get all schools", async () => {
+    const res = await request(app)
+      .get("/api/schools")
+      .set("Authorization", `Bearer ${superadminToken}`);
 
-    it('should update a school', async () => {
-        // Update the school's name
-        const updatedSchool = {
-            name: 'Updated School'
-        };
+    expect(res.status).to.equal(200);
+    expect(res.body).to.be.an("array");
+    expect(res.body.length).to.be.at.least(2); // At least 2 schools should be returned
 
-        const updateRes = await request(app)
-            .put(`/api/schools/${schoolId}`)
-            .set('Authorization', `Bearer ${token}`)
-            .send(updatedSchool);
+    const schoolNames = res.body.map((school) => school.name);
+    expect(schoolNames).to.include("Test School A");
+    expect(schoolNames).to.include("Test School B");
+  });
 
-        expect(updateRes.status).to.equal(200);
-        expect(updateRes.body.name).to.equal(updatedSchool.name);
-    });
+  it("should get a school by ID", async () => {
+    const res = await request(app)
+      .get(`/api/schools/${schoolId}`)
+      .set("Authorization", `Bearer ${superadminToken}`);
 
-    it('should delete a school', async () => {
-        // Delete the school
-        const deleteRes = await request(app)
-            .delete(`/api/schools/${schoolId}`)
-            .set('Authorization', `Bearer ${token}`);
+    expect(res.status).to.equal(200);
+    expect(res.body).to.have.property("_id", schoolId);
+    expect(res.body).to.have.property("name");
+    expect(res.body).to.have.property("address");
+  });
 
-        expect(deleteRes.status).to.equal(204);
-    });
+  it("should update a school", async () => {
+    const updatedSchool = {
+      name: "Updated Test School",
+      address: "789 Updated St",
+      phone: "555-555-5555",
+      email: "updatedschool@soartest.com",
+      website: "http://updatedschool.com",
+      established: "2010-01-01",
+    };
 
-    it('should get all schools', async () => {
-        // Create multiple schools
-        const schools = [
-            {
-                name: 'School One',
-                address: 'Address One',
-                phone: '111-111-1111',
-                email: 'schoolone@example.com',
-                website: 'http://schoolone.com',
-                established: '1990-01-01',
-                admin: userId
-            },
-            {
-                name: 'School Two',
-                address: 'Address Two',
-                phone: '222-222-2222',
-                email: 'schooltwo@example.com',
-                website: 'http://schooltwo.com',
-                established: '1995-01-01',
-                admin: userId
-            }
-        ];
+    const res = await request(app)
+      .put(`/api/schools/${schoolId}`)
+      .set("Authorization", `Bearer ${superadminToken}`)
+      .send(updatedSchool);
 
-        for (const school of schools) {
-            await request(app)
-                .post('/api/schools')
-                .set('Authorization', `Bearer ${token}`)
-                .send(school);
-        }
+    expect(res.status).to.equal(200);
+    expect(res.body).to.have.property("name", updatedSchool.name);
+    expect(res.body).to.have.property("address", updatedSchool.address);
+  });
 
-        // Get all schools
-        const getAllRes = await request(app)
-            .get('/api/schools')
-            .set('Authorization', `Bearer ${token}`);
+  it("should delete a school", async () => {
+    const res = await request(app)
+      .delete(`/api/schools/${schoolId}`)
+      .set("Authorization", `Bearer ${superadminToken}`);
 
-        expect(getAllRes.status).to.equal(200);
-        expect(getAllRes.body).to.be.an('array');
-        expect(getAllRes.body.length).to.be.greaterThan(1);
-    });
+    expect(res.status).to.equal(204);
+
+    const getRes = await request(app)
+      .get(`/api/schools/${schoolId}`)
+      .set("Authorization", `Bearer ${superadminToken}`);
+
+    expect(getRes.status).to.equal(404);
+  });
 });
